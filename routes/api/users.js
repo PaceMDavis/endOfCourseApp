@@ -8,7 +8,24 @@ const UsersController = require('../../controllers/users')
 
 
 //Gets all members
-router.get('/', UsersController.getUsers)
+router.get('/', UsersController.getUsers);
+
+//gets user by id
+router.get('/:user_id', UsersController.getUsersById)
+
+//gets users by city
+router.get('/city/:city', UsersController.getUsersByCity)
+
+//gets users by state
+router.get('/state/:state', UsersController.getUsersByState)
+
+//Create user
+router.post('/', UsersController.createUser)
+
+router.put('/:user_id', UsersController.updateUserById)
+
+
+// router.post()
 
 // // Get Single Member
 // router.get('/:id', (req,res) => {

@@ -2,6 +2,7 @@ const express = require('express')
 // const path = require('path')
 const app = express()
 const port = process.env.PORT || 4000
+const bodyParser = require("body-parser")
 // const logger = require('./middleware/logger')
 
 
@@ -20,7 +21,7 @@ const port = process.env.PORT || 4000
 
 // Set static folder
 // app.use(express.static(path.join(__dirname, 'public')))
-
+app.use(bodyParser.json())
 app.use('/', require('./routes/api/users'))
 
 // app.get('/', function(req,res) {
