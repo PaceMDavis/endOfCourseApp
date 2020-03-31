@@ -3,6 +3,8 @@ const express = require('express')
 const app = express()
 const port = process.env.PORT || 4000
 const bodyParser = require("body-parser")
+const usersRouter = require('./routes/api/users')
+const spotsRouter = require('./routes/api/spots')
 // const logger = require('./middleware/logger')
 
 
@@ -22,7 +24,9 @@ const bodyParser = require("body-parser")
 // Set static folder
 // app.use(express.static(path.join(__dirname, 'public')))
 app.use(bodyParser.json())
-app.use('/', require('./routes/api/users'))
+app.use('/users', usersRouter)
+app.use('/spots', spotsRouter)
+// app.use('/social', require('./routes/api/social'))
 
 // app.get('/', function(req,res) {
 //   res.send('Frenzied Fish')
@@ -34,3 +38,7 @@ app.use('/', require('./routes/api/users'))
 
 app.listen(port, () =>
 console.log(`Example app listening on ${port}!`))
+
+
+//geolocation api key = AIzaSyC0K8jeR2V8lGvgvIiN0GK8OTfeQ7WeXt0
+//javascript maps api key = AIzaSyC0K8jeR2V8lGvgvIiN0GK8OTfeQ7WeXt0

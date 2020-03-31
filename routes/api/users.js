@@ -1,9 +1,8 @@
 const express = require('express');
 const router = express.Router();
+const UsersController = require('../../controllers/users')
 // const users = require ('../../state')
 // const uuid =require('uuid')
-const UsersController = require('../../controllers/users')
-
 
 
 
